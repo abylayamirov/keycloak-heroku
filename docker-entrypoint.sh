@@ -46,24 +46,6 @@ file_env 'KEYCLOAK_PASSWORD'
 ############
 
 export KC_HOSTNAME=$KEYCLOAK_HOSTNAME
-
-# Configure DB
-
-echo "========================================================================="
-echo ""
-echo "  Using $DB_NAME database"
-echo ""
-echo "========================================================================="
-echo ""
-
-/opt/tools/x509.sh
-/opt/tools/jgroups.sh $JGROUPS_DISCOVERY_PROTOCOL $JGROUPS_DISCOVERY_PROPERTIES
-/opt/tools/autorun.sh
-
-##################
-# Start Keycloak #
-##################
 export KEYCLOAK_ADMIN=$KEYCLOAK_USER
 export KEYCLOAK_ADMIN_PASSWORD=$KEYCLOAK_PASSWORD
-exec /opt/keycloak/bin/kc.sh start --optimized --hostname-port=$PORT
 exit $?
