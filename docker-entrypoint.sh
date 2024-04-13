@@ -6,7 +6,7 @@ if [ "$DATABASE_URL" != "" ]; then
 
     regex='^postgres://([a-zA-Z0-9_-]+):([a-zA-Z0-9]+)@([a-z0-9.-]+):([[:digit:]]+)/([a-zA-Z0-9_-]+)$'
     if [[ $DATABASE_URL =~ $regex ]]; then
-        export KC_DB_URL=$DATABASE_URL
+        export KC_DB_URL="jdbc:$DATABASE_URL"
         export KC_DB=postgres
         export KC_DB_USERNAME=${BASH_REMATCH[1]}
         export KC_DB_PASSWORD=${BASH_REMATCH[2]}
