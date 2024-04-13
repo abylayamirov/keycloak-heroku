@@ -29,12 +29,12 @@
     "formation": {
         "web": {
             "quantity": 1,
-            "size": "Performance-M"
+            "size": "Standard-1X"
         }
     },
     "addons": [
         {
-            "plan": "heroku-postgresql:hobby-dev"
+            "plan": "heroku-postgresql:basic"
         }
     ]
 }
